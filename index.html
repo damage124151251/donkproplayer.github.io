@@ -97,7 +97,6 @@
             border-radius: 8px;
             border: 2px solid #ffd700;
             box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-            /* Placeholder for actual QR code image */
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="white"/><rect x="20" y="20" width="40" height="40" fill="%231a1200"/><rect x="80" y="20" width="20" height="20" fill="%231a1200"/><rect x="140" y="20" width="40" height="40" fill="%231a1200"/><rect x="20" y="80" width="20" height="20" fill="%231a1200"/><rect x="60" y="80" width="20" height="20" fill="%231a1200"/><rect x="100" y="80" width="40" height="40" fill="%231a1200"/><rect x="160" y="80" width="20" height="20" fill="%231a1200"/><rect x="20" y="140" width="40" height="40" fill="%231a1200"/><rect x="80" y="160" width="20" height="20" fill="%231a1200"/><rect x="120" y="140" width="20" height="20" fill="%231a1200"/><rect x="160" y="140" width="20" height="20" fill="%231a1200"/></svg>');
         }
         
@@ -125,50 +124,98 @@
             box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
         }
         
-        .about-section {
-            margin-top: 50px;
-            padding: 30px;
+        /* Enhanced Content Sections */
+        .content-section {
+            margin: 60px 0;
+            padding: 40px;
             background-color: rgba(42, 32, 0, 0.7);
-            border-radius: 10px;
+            border-radius: 15px;
             border: 1px solid rgba(255, 215, 0, 0.3);
         }
         
-        .about-section h2 {
+        .section-title {
             color: #ffd700;
-        }
-
-        /* New styles for the image gallery */
-        .image-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid rgba(255, 215, 0, 0.3);
-        }
-
-        .gallery-image {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 2px solid #ffd700;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-            transition: transform 0.3s;
-        }
-
-        .gallery-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-        }
-
-        .gallery-title {
-            width: 100%;
+            font-size: 2em;
+            margin-bottom: 30px;
             text-align: center;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #ffd700, #ffaa00);
+            margin: 15px auto 0;
+        }
+        
+        /* Expanded Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            background-color: rgba(26, 18, 0, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+            border-color: #ffd700;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .gallery-caption {
+            padding: 15px;
+            color: #ffe8a0;
+        }
+        
+        .gallery-caption h3 {
             color: #ffd700;
-            margin-bottom: 20px;
+            margin-top: 0;
+        }
+        
+        /* Text Content Blocks */
+        .text-block {
+            margin-bottom: 40px;
+        }
+        
+        .text-block h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
             font-size: 1.5em;
+        }
+        
+        .text-block p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -180,7 +227,8 @@
                 <div class="tagline">The galaxy is ours...</div>
             </div>
             <div>
-                <img src="moonzoklogo.png" alt="Moon XOK Logo" width="80">
+                Our Mission
+
             </div>
         </header>
         
@@ -195,22 +243,145 @@
                 
                 <div class="social-links">
                     <a href="#" class="social-link">X</a>
+                    <a href="#" class="social-link">Telegram</a>
+                    <a href="#" class="social-link">DEX</a>
+                </div>
+            </div>
+            <div class="qr-section">
+                <div class="qr-code"></div>
+                <p style="color: #ffcc00;">Scan to add Moon XOK to your wallet</p>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="content-section">
+            <h2 class="section-title">About Moon XOK</h2>
+            <div class="two-column">
+                <div class="text-block">
+                    <h3>Our Mission</h3>
+<img src="moonzoklogo.png" alt="Moon XOK Logo" width="80">
+                    <p>Moon XOK is more than just a memecoin - it's a movement. Born from the cosmic laughter of the crypto universe, we're here to prove that decentralization and fun can go hand-in-hand.</p>
+                    <p>We believe in creating a community-driven ecosystem where every holder has a voice and the power to shape the future of the project.</p>
+                </div>
+                <div class="text-block">
+                    <h3>Tokenomics</h3>
+                    <p>Our tokenomics are designed to reward holders and create a sustainable ecosystem where the community drives all decisions.</p>
+                    <p>With innovative reward mechanisms and a fair distribution model, Moon XOK puts power back in the hands of the people.</p>
                 </div>
             </div>
         </div>
 
-        <div class="about-section">
-            <h2>About Moon XOK</h2>
-            <p>Moon XOK is more than just a memecoin - it's a movement. Born from the cosmic laughter of the crypto universe, we're here to prove that decentralization and fun can go hand-in-hand.</p>
-            <p>Our tokenomics are designed to reward holders and create a sustainable ecosystem where the community drives all decisions.</p>
+        <!-- Expanded Gallery Section -->
+        <div class="content-section">
+            <h2 class="section-title">Community Highlights</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="image1.png" alt="Community event" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>Moon XOK Meetup</h3>
+                        <p>Our first community gathering in New York with over 200 attendees.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image2.png" alt="Charity event" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>Charity Donation</h3>
+                        <p>Contributing to blockchain education in underprivileged communities.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image3.png" alt="Partnership announcement" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>New Partnership</h3>
+                        <p>Announcing our collaboration with major DeFi platforms.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image4.png" alt="Token celebration" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>Token Milestone</h3>
+                        <p>Celebrating 100,000 holders of Moon XOK token.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image5.png" alt="Development update" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>Tech Update</h3>
+                        <p>Our development team working on new platform features.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image6.png" alt="Community art" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>Community Art</h3>
+                        <p>Showcasing fan-created Moon XOK artwork and memes.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- New image gallery section -->
-        <div class="image-gallery">
-            <div class="gallery-title">Community Highlights</div>
-            <img src="CoinGecko_logo.png" alt="Community image 1" class="gallery-image">
-            <img src="cJiIPd2s_400x400.jpg" alt="Community image 2" class="gallery-image">
-            <img src="images (2).png" alt="Community image 3" class="gallery-image">
+        <!-- Roadmap Section -->
+        <div class="content-section">
+            <h2 class="section-title">Project Roadmap</h2>
+            <div class="two-column">
+                <div class="text-block">
+                    <h3>Phase 1: Launch</h3>
+                    <p>Successfully launched Moon XOK token with fair distribution.</p>
+                    <p>Established community channels and initial partnerships.</p>
+                    <p>Achieved first 10,000 holders milestone.</p>
+                    
+                    <h3>Phase 2: Growth</h3>
+                    <p>Listed on major decentralized exchanges.</p>
+                    <p>Implemented staking rewards program.</p>
+                    <p>Launched community governance platform.</p>
+                </div>
+                <div class="text-block">
+                    <h3>Phase 3: Expansion</h3>
+                    <p>Development of Moon XOK NFT collection.</p>
+                    <p>Strategic partnerships with other meme projects.</p>
+                    <p>Expansion into multichain ecosystem.</p>
+                    
+                    <h3>Phase 4: Moon</h3>
+                    <p>Full DAO implementation for community governance.</p>
+                    <p>Merchandise store and real-world integrations.</p>
+                    <p>1 million holders milestone celebration.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="content-section">
+            <h2 class="section-title">Core Contributors</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="team1.png" alt="Team member" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>Alex C.</h3>
+                        <p>Founder & Lead Developer</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="team2.png" alt="Team member" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>Maria S.</h3>
+                        <p>Community Manager</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="team3.png" alt="Team member" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>James L.</h3>
+                        <p>Marketing Director</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="team4.png" alt="Team member" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>Sarah K.</h3>
+                        <p>Smart Contract Engineer</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
