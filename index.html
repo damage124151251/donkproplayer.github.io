@@ -83,21 +83,40 @@
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
         }
         
-        .qr-section {
+        .logo-section {
             flex: 0 0 300px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
-        .qr-code {
-            width: 200px;
-            height: 200px;
-            background-color: white;
+        .main-logo {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border: 3px solid #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            background-color: rgba(42, 32, 0, 0.3);
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+        
+        .main-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .mission-logo {
+            width: 180px;
+            height: auto;
             margin: 0 auto 20px;
-            padding: 10px;
-            border-radius: 8px;
+            display: block;
+            border-radius: 10px;
             border: 2px solid #ffd700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="white"/><rect x="20" y="20" width="40" height="40" fill="%231a1200"/><rect x="80" y="20" width="20" height="20" fill="%231a1200"/><rect x="140" y="20" width="40" height="40" fill="%231a1200"/><rect x="20" y="80" width="20" height="20" fill="%231a1200"/><rect x="60" y="80" width="20" height="20" fill="%231a1200"/><rect x="100" y="80" width="40" height="40" fill="%231a1200"/><rect x="160" y="80" width="20" height="20" fill="%231a1200"/><rect x="20" y="140" width="40" height="40" fill="%231a1200"/><rect x="80" y="160" width="20" height="20" fill="%231a1200"/><rect x="120" y="140" width="20" height="20" fill="%231a1200"/><rect x="160" y="140" width="20" height="20" fill="%231a1200"/></svg>');
+            padding: 10px;
+            background-color: rgba(42, 32, 0, 0.5);
         }
         
         .social-links {
@@ -216,6 +235,23 @@
             .two-column {
                 grid-template-columns: 1fr;
             }
+            
+            .hero {
+                flex-direction: column;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .logo-section {
+                margin-top: 30px;
+            }
+            
+            .mission-logo {
+                width: 150px;
+            }
         }
     </style>
 </head>
@@ -227,8 +263,7 @@
                 <div class="tagline">The galaxy is ours...</div>
             </div>
             <div>
-                Our Mission
-
+                <img src="moonzoklogo.png" alt="Moon XOK Logo" width="80">
             </div>
         </header>
         
@@ -242,14 +277,14 @@
                 </div>
                 
                 <div class="social-links">
-                    <a href="#" class="social-link">X</a>
+                    <a href="https://x.com/MoonX0k" target="_blank" class="social-link">X</a>
                     <a href="#" class="social-link">Telegram</a>
                     <a href="#" class="social-link">DEX</a>
                 </div>
             </div>
-            <div class="qr-section">
-                <div class="qr-code"></div>
-                <p style="color: #ffcc00;">Scan to add Moon XOK to your wallet</p>
+            <div class="logo-section">
+                <img src="moonxok-main-logo.png" alt="Moon XOK Main Logo" class="main-logo">
+                <p style="color: #ffcc00; font-size: 1.1em;">To the Moon! 🚀</p>
             </div>
         </div>
 
@@ -259,7 +294,7 @@
             <div class="two-column">
                 <div class="text-block">
                     <h3>Our Mission</h3>
-<img src="missionlogo.png" alt="Moon XOK Logo" width="80">
+                    <img src="missionlogo.png" alt="Mission Logo" class="mission-logo">
                     <p>Moon XOK is more than just a memecoin - it's a movement. Born from the cosmic laughter of the crypto universe, we're here to prove that decentralization and fun can go hand-in-hand.</p>
                     <p>We believe in creating a community-driven ecosystem where every holder has a voice and the power to shape the future of the project.</p>
                 </div>
@@ -303,20 +338,6 @@
                         <p>Celebrating 100,000 holders of Moon XOK token.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="image5.png" alt="Development update" class="gallery-image">
-                    <div class="gallery-caption">
-                        <h3>Tech Update</h3>
-                        <p>Our development team working on new platform features.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="image6.png" alt="Community art" class="gallery-image">
-                    <div class="gallery-caption">
-                        <h3>Community Art</h3>
-                        <p>Showcasing fan-created Moon XOK artwork and memes.</p>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -345,41 +366,6 @@
                     <p>Full DAO implementation for community governance.</p>
                     <p>Merchandise store and real-world integrations.</p>
                     <p>1 million holders milestone celebration.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Team Section -->
-        <div class="content-section">
-            <h2 class="section-title">Core Contributors</h2>
-            <div class="image-gallery">
-                <div class="gallery-item">
-                    <img src="team1.png" alt="Team member" class="gallery-image">
-                    <div class="gallery-caption">
-                        <h3>Alex C.</h3>
-                        <p>Founder & Lead Developer</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="team2.png" alt="Team member" class="gallery-image">
-                    <div class="gallery-caption">
-                        <h3>Maria S.</h3>
-                        <p>Community Manager</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="team3.png" alt="Team member" class="gallery-image">
-                    <div class="gallery-caption">
-                        <h3>James L.</h3>
-                        <p>Marketing Director</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="team4.png" alt="Team member" class="gallery-image">
-                    <div class="gallery-caption">
-                        <h3>Sarah K.</h3>
-                        <p>Smart Contract Engineer</p>
-                    </div>
                 </div>
             </div>
         </div>
